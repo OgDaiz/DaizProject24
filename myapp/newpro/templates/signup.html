@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - MTChats</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}"> 
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MT<span>Chats</span></div>
+            <nav class="menu">
+                <a href="#">Home</a>
+                <a href="#">Help</a>
+                <a href="#">Settings</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="{% url 'signup_view' %}" class="btn">Sign Up</a>
+                <a href="{% url 'login_view' %}" class="btn active">Login</a>
+            </div>
+        </header>
+        <main>
+            <div class="card"> 
+                <h1 class="login">Sign Up</h1> 
+                <p>Have an account? <a href="{% url 'login_view' %}">Login</a></p>
+                <form method="POST" action="{% url 'signup_view' %}">
+                    {% csrf_token %}
+                    <div class="inputBox"> 
+                        <label for="firstname">Firstname</label>
+                        <input type="text" id="firstname" name="firstname" required>
+                    </div>
+                    <div class="inputBox"> 
+                        <label for="lastname">Lastname</label>
+                        <input type="text" id="lastname" name="lastname" required>
+                    </div>
+                    <div class="inputBox"> 
+                        <label for="matric_number">Matric Number</label>
+                        <input type="text" id="matric_number" name="matric_number" required>
+                    </div>
+                    <div class="inputBox"> 
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button> <!-- Changed class from "btn" to "enter" -->
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

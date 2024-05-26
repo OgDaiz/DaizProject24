@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTChats</title>
+    <link rel="stylesheet" href="{% static 'css/food.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MT<span>Chats</span></div>
+            <nav class="menu">
+                <a href="#">About</a>
+                <a href="#">Help</a>
+                <a href="#">Settings</a>
+                <a href="#">contact Us</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Welcome to MTChats</h1>
+            <div class="buttons">
+                <a href="{% url 'signup_view' %}" class="btn signup">Sign Up</a>
+                <a href="{% url 'login_view' %}" class="btn login">Login</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

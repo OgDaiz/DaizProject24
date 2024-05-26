@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - MTChats</title>
+    <link rel="stylesheet" href="{% static '/css/login.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MT<span>Chats</span></div>
+            <nav class="menu">
+                <a href="#">Home</a>
+                <a href="#">Help</a>
+                <a href="#">Settings</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="{% url 'login_view' %}" class="btn active">login</a>
+                <a href="{% url 'signup_view' %}" class="btn">Sign Up</a>
+            </div>
+        </header>
+        <main>
+            <div class="form-container">
+            
+
+    <dotlottie-player src="https://lottie.host/81609b70-aac7-4b88-ac79-220ee8808fcd/BAxwujaiVX.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player>
+                <h1>Sign In</h1>
+                <p>Not signed up yet? <a href="{% url 'signup_view' %}">Sign up here</a></p>
+                <form method="POST" action="{% url 'login_view' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="matric_number">Matric Number</label>
+                        <input type="text" id="matric_number" name="matric_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+</body>
+</html>
+

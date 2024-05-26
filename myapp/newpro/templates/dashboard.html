@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MTChats</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MT<span>Chats</span></div>
+            <nav class="menu">
+                <a href="#">Home</a>
+                <a href="{% url 'change_password_view' %}">Change Password</a>
+                <a href="#">Help</a>
+                <a href="#">Settings</a>
+                <a href="{% url 'chatroom_view' %}">Chatroom</a>
+            </nav>
+        </header>
+        <main>
+            <h1>Welcome, {{ user.first_name }} {{ user.last_name }}</h1>
+            <p>Here you can manage your settings, contacts, and chat with friends.</p>
+            <a href="{% url 'chatroom_view' %}" class="btn">Go to Chatroom</a>
+
+            <h2>Bluetooth Device Connection</h2>
+            <button id="connect-button" class="btn">Connect to Device</button>
+            <p id="device-info"></p>
+        </main>
+    </div>
+
+     <script src="{% static '/js/dashboard.js' %}"></script>
+</body>
+</html>
